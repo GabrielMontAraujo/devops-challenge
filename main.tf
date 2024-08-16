@@ -63,7 +63,7 @@ resource "aws_security_group" "web_sg" {
 # Criar o par de chaves SSH
 resource "aws_key_pair" "deployer" {
   key_name   = "deployer-key"
-  public_key = file("my-terraform-key.pub") # Chave pública gerada localmente
+  public_key = file("terraform.pub") # Chave pública gerada localmente
 }
 
 # Criar uma instância EC2 com Ubuntu
