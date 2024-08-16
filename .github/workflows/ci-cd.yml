@@ -36,12 +36,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Obter IP do Servidor
-        id: get_ip
-        run: |
-          terraform output -raw public_ip > public_ip.txt
-          echo "SERVER_IP=$(cat public_ip.txt)" >> $GITHUB_ENV
-
       - name: Conectar e Verificar a Página
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > /tmp/ssh_private_key
